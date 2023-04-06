@@ -3,7 +3,7 @@
 ## Introduction
 Prompt Engineering is a super power. It makes developers more productive and it can empower all sorts of creators to bring their visions to reality. Or just make us better at our jobs. In this repository, I'll be gathering (and inventing?) a set of useful techniques and workflows for gaining incredible benefits from tools such as ChatGPT and GitHub Copilot. As a new field, I'm excited to see what will emerge from all this exploration.
 
-## Note on using the Jupyter Notebooks
+## Note on the use of Jupyter Notebooks
 Unless stated otherwise, the Jupyter notebooks are not executable. My intention is for people to be able to utilize these techniques in whatever way works best for them, be it through a web browser, a REST API, a Python library, or any other method that may arise.
 
 I find Jupyter particularly useful for its ability to display both code and non-code (text), so I use it here.
