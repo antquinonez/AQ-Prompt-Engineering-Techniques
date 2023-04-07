@@ -23,7 +23,7 @@ I have the following folders (topics):
 
 ## Coming Soon
 Ars longa, vita brevis
-https://airtable.com/shrDDvq4a4FwuKQAt
+https://airtable.com/shrE79LR7RnO3PmBM
 
 ## Note on Style
 I prefer adopting a first-person, conversational tone that's nonetheless concise and accurate. I hope this approach works for you.
