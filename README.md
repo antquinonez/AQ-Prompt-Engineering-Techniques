@@ -22,7 +22,7 @@ I have the following folders (topics):
 - Code Complete: Inspired by the Book Complete by Steve McConnell, which provides a whole bunch of useful practices. This is my homage to him.
 
 ## Coming Soon
--- Ars longa, vita brevis
+Ars longa, vita brevis
 https://airtable.com/shrDDvq4a4FwuKQAt
 
 ## Note on Style
