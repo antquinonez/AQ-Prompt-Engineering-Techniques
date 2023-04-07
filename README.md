@@ -18,8 +18,8 @@ All prompt engineering techniques (or workflows) can be found in the library dir
 I have the following folders (topics):
 - Basic: Of the interesting, should of thought of that myself variety.
 - Multi-Step: Multiple-step techniques.
-- Refactorings: For example, turning functions into classes variety.
-- Code Complete: Inspired by the Book Complete by Steve McConnell, which provides a whole bunch of useful practices. This is my homage to him.
+- Refactorings: For example, of the turning functions into classes variety.
+- Code Complete: Inspired by the Book Complete by Steve McConnell, which provides a whole bunch of useful practices. This is my homage to him. I don't know if my code completes are in Steve's book...but maybe. I defintely learned a lot from that book.
 
 ## Coming Soon
 Ars longa, vita brevis
