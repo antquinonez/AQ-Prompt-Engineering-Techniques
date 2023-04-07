@@ -6,9 +6,6 @@ Prompt Engineering is a super power. It makes developers more productive and it 
 ## What version of ChatGPT do I use?
 Everything here, so far, has been written using ChatGPT-4. Eventually, I'll cover other AI models, but for now it's GPT-4. 
 
-## What version of ChatGPT do I use?
-Everything here, so far, has been written using ChatGPT-4. Eventually, I'll cover other AI models, but for now it's GPT-4. 
-
 ## Note on the use of Jupyter Notebooks
 Unless stated otherwise, the Jupyter notebooks are not executable. My intention is for people to be able to utilize these techniques in whatever way works best for them, be it through a web browser, a REST API, a Python library, or any other method that may arise.
 
