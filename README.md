@@ -26,7 +26,7 @@ I have the following folders/topics:
 
 ## Other Content
 - Glossary: A glossary of terms and definitions.
-- [Wiki](/wiki): Analysis and summaries of the techniques in this repo.
+- [Wiki](wiki): Analysis and summaries of the techniques in this repo.
 
 ## Note on the use of Jupyter Notebooks
 Unless stated otherwise, the Jupyter notebooks are not executable. My intention is for people to be able to utilize these techniques in whatever way works best for them, be it through a web browser, a REST API, a Python library, or any other method that may arise.
