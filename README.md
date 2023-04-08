@@ -4,7 +4,7 @@
 Prompt Engineering is a super power. It makes developers more productive and it can empower all sorts of creators to bring their visions to reality. Or just make us better at our jobs. In this repository, I'll be gathering (and inventing?) a set of useful techniques and workflows for gaining incredible benefits from tools such as ChatGPT and Bard. As a new field, I'm excited to see what will emerge from all this exploration.
 
 ## About ChatGPT
-Everything here, so far, has been written using ChatGPT-4.
+All tedhniques, so far, has been written using ChatGPT-4.
 
 ## About Bard
 Bard does not use public versioning yet.
