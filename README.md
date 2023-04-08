@@ -25,7 +25,7 @@ I have the following folders/topics:
 - Code Complete: Inspired by the book Code Complete by Steve McConnell, who provides dozens of useful practices. This is my homage to him. I don't know if my code completes are in Steve's book...but maybe. I definitely learned a lot from that book.
 
 ## Other Content
-- Glossary: A glossary of terms and definitions.
+- [Glossary](https://github.com/antquinonez/AQ-Prompt-Engineering-Techniques/blob/master/glossary.md): A glossary of terms and definitions.
 - [Wiki](https://github.com/antquinonez/AQ-Prompt-Engineering-Techniques/wiki): Analysis and summaries of the techniques in this repo.
 
 ## Note on the use of Jupyter Notebooks
