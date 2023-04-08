@@ -3,11 +3,14 @@
 ## Introduction
 Prompt Engineering is a super power. It makes developers more productive and it can empower all sorts of creators to bring their visions to reality. Or just make us better at our jobs. In this repository, I'll be gathering (and inventing?) a set of useful techniques and workflows for gaining incredible benefits from tools such as ChatGPT and Bard. As a new field, I'm excited to see what will emerge from all this exploration.
 
-## What version of ChatGPT do I use?
+## About ChatGPT
 Everything here, so far, has been written using ChatGPT-4.
 
-## What version of Bard?
-Bard is still in beta, and I'm using the latest version available at the time.
+## About Bard
+Bard does not use public versioning yet.
+
+### Observations
+- 4/8/2023: I could not get a valid method to append records to a pandas dataframe. The variations on a solution involved using append, which is no longer a valid method. It's pulling old information from the internet. And dang, did it not train on enough GitHub? I hope bard is not a non-starter or a narrowly useful tool for too long.
 
 ## Library Layout
 The library is organized into two main folders, GPT and Bard, depending on which tool was used to document a technique. Regardless, it's possible and likely that a technique will work for both.
