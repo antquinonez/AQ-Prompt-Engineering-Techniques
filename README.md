@@ -1,16 +1,16 @@
 # AQ-Prompt-Engineering-Techniques
 
 ## Introduction
-Prompt Engineering is a super power. It makes developers more productive and it can empower all sorts of creators to bring their visions to reality. Or just make us better at our jobs. In this repository, I'll be gathering (and inventing?) a set of useful techniques and workflows for gaining incredible benefits from tools such as ChatGPT and Bard. As a new field, I'm excited to see what will emerge from all this exploration.
+Prompt Engineering is a super power. It empowers all sorts of creators to bring their visions to reality. In this repository, I'll be gathering (and inventing?) a set of useful techniques and workflows for using tools such as ChatGPT and Bard. While my theme, for now, is software development the principles here should be applicable to other subjects and models as well.
 
 ## About ChatGPT
-All techniques, so far, has been written using ChatGPT-4.
+Most ChatGPT techniques have been written using ChatGPT-4. While, the same techniques can provide similar results for earlier versions of ChatGPT, the results will be less impressive. Sometimes, though, that's a good thing because the less advanced model will more readily reveal the weaknesses of an approach.
 
 ## About Bard
-Bard does not use public versioning yet.
+Bard's limitations as a code generator are highly illustrative for prompt engineering. You can very quickly find yourself generating the wrong answer after the correct answer had been previously generated. Bard is weighing the latest answer heavier than the previous correct answer and can't get unstuck.
 
-### Observations
-- 4/8/2023: I could not get a valid method to append records to a pandas dataframe. The variations on a solution involved using append, which is no longer a valid method. It's pulling old information from the internet. And dang, did it not train on enough GitHub? I hope bard is not a non-starter or a narrowly useful tool for too long.
+### Notes
+- 4/8/2023: I could not get a valid method to append records to a pandas dataframe. The variations on a solution involved using append, which is no longer a valid method. It's pulling old information from the internet. And dang, did it not train on enough GitHub? I hope Bard is not a non-starter or a narrowly useful tool for too long.
 
 ## Library Layout
 The library is organized into two main folders, GPT and Bard, depending on which tool was used to document a technique. Regardless, it's possible and likely that a technique will work for both.
@@ -28,7 +28,7 @@ Unless stated otherwise, the Jupyter notebooks are not executable. My intention 
 I find Jupyter particularly useful for its ability to display both code and non-code (text), so I use it here.
 
 ## Coming Soon
-Ars longa, vita brevis
+Ars longa, vita brevis.
 https://airtable.com/shrE79LR7RnO3PmBM
 
 ## Note on Style
