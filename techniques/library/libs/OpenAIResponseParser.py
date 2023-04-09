@@ -7,6 +7,7 @@
 # - Apply styling to the DataFrame for better readability.
 
 import pandas as pd
+import re
 from typing import List, Dict, Any
 
 
@@ -38,15 +39,14 @@ class OpenAIResponseParser:
         """
         Apply styling to the DataFrame.
         """
-        self.style = self.df.style.set_properties(**{'text-align': 'left'})
+        self.df_needed = self.df[['id', 'created', 'model', 'usage', 'all_code']]
+        self.styled = self.df_needed.style.set_properties(**{'text-align': 'left'})
 
     def _store_response(self) -> None:
         """
         Store the response content into the DataFrame.
         """
         content = self.response['choices'][0]['message']['content'].strip()
-
-        import re
 
         pattern = re.compile(r"```python([\s\S]*?)```")
         code_blocks = re.findall(pattern, content)
@@ -72,6 +72,26 @@ class OpenAIResponseParser:
             ],
             ignore_index=True,
         )
+
+        # format an all_code string
+        def format_text(text):
+            return text.replace('\n', '<br>').replace(' ', '&nbsp;')
+        
+        # Apply the formatting function to the all_code column
+        self.df['all_code'] = self.df['all_code'].apply(format_text)
+
+        # I don't get why this is broken, but it doesn't matter for now...or ever?
+        # # format a code block
+        # def format_list(code_blocks:list):
+        #     code_block_string = ""
+
+        #     for block in code_blocks:
+        #         block.replace('\n', '<br>').replace(' ', '&nbsp;')
+        #         code_block_string += block
+                 
+        # # Apply the formatting function to the code_blocks column
+        # self.df['code_blocks'] = self.df['code_blocks'].apply(format_list)
+
 
     def get_dataframe(self) -> pd.DataFrame:
         """
