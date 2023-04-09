@@ -24,6 +24,11 @@ class OpenAIResponseParser:
         )
 
         self._store_response()
+        self._style()
+
+    def _style(self):
+        self.style = self.df.style.set_properties(**{'text-align': 'left'})
+
 
     def _store_response(self):
         content = self.response['choices'][0]['message']['content'].strip()
