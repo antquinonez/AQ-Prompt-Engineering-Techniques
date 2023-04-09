@@ -1,13 +1,12 @@
 import openai
-import polars as pl
-# import pandas as pd
+import pandas as pd
 
 class OpenAIResponseParser:
     def __init__(self, response):
 
         self.response = response
 
-        self.df = pl.DataFrame(
+        self.df = pd.DataFrame(
             {
                 "id": [],
                 "created": [],
@@ -19,32 +18,31 @@ class OpenAIResponseParser:
 
         self._store_response()
 
-                # "role": [],
-
     def _store_response(self):
         content = self.response['choices'][0]['message']['content'].strip()
 
-        self.df = self.df.vstack(
-            pl.DataFrame(
-                {
-                    "id": [self.response['id']],
-                    "created": [self.response['created']],
-                    "model": [self.response['model']],
-                    "usage": [self.response['usage']['prompt_tokens']],
-                    "content": [content],
-                }
-            )
+        self.df = pd.concat(
+            [
+                self.df,
+                pd.DataFrame(
+                    {
+                        "id": [self.response['id']],
+                        "created": [self.response['created']],
+                        "model": [self.response['model']],
+                        "usage": [self.response['usage']['prompt_tokens']],
+                        "content": [content],
+                    }
+                )
+            ],
+            ignore_index=True,
         )
 
         print(self.df)
 
-                    # "role": [response['choices'][0]['message']['role']],
-
-
     def get_dataframe(self):
-        return self.df.to_pandas()
+        return self.df
 
-# # Example usage:
+# Example usage:
 # api_key = "your_openai_api_key"
 # handler = OpenAIResponseHandler(api_key)
 
