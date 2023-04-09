@@ -1,5 +1,10 @@
 import openai
 import pandas as pd
+# Set display options
+pd.set_option('display.max_columns', None)  # Display all columns
+pd.set_option('display.expand_frame_repr', False)  # Prevent line break in DataFrame
+pd.set_option('display.max_colwidth', None)  # Display the full content of cells
+
 
 class OpenAIResponseParser:
     def __init__(self, response):
@@ -12,6 +17,8 @@ class OpenAIResponseParser:
                 "created": [],
                 "model": [],
                 "usage": [],
+                "all_code": [],
+                "code_blocks": [],
                 "content": [],
             }
         )
@@ -21,6 +28,16 @@ class OpenAIResponseParser:
     def _store_response(self):
         content = self.response['choices'][0]['message']['content'].strip()
 
+        import re
+
+        pattern = re.compile(r"```python([\s\S]*?)```")
+        code_blocks = re.findall(pattern, content)
+        print ("code_blocks:", code_blocks)
+
+        all_code = ""
+        for code_block in code_blocks:
+            all_code  += code_block.strip() + "\n"
+            
         self.df = pd.concat(
             [
                 self.df,
@@ -30,6 +47,8 @@ class OpenAIResponseParser:
                         "created": [self.response['created']],
                         "model": [self.response['model']],
                         "usage": [self.response['usage']['prompt_tokens']],
+                        "all_code": [all_code],
+                        "code_blocks": [code_blocks],
                         "content": [content],
                     }
                 )
