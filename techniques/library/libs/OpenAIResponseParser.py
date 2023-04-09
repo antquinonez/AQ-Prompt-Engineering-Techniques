@@ -1,7 +1,7 @@
 import openai
 import polars as pl
 
-class OpenAIResponseHandler:
+class OpenAIResponseParser:
     def __init__(self, api_key):
         openai.api_key = api_key
         self.df = pl.DataFrame(
