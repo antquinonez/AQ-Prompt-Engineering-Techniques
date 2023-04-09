@@ -131,3 +131,6 @@ dmypy.json
 # project
 *test/*
 .vscode/settings.json
+techniques/library/libs/Code.py
+techniques/library/libs/Cleaner.py
+techniques/library/libs/connect.ipynb
