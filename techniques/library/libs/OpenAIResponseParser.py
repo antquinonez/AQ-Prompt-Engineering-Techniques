@@ -1,9 +1,12 @@
 import openai
 import polars as pl
+# import pandas as pd
 
 class OpenAIResponseParser:
-    def __init__(self, api_key):
-        openai.api_key = api_key
+    def __init__(self, response):
+
+        self.response = response
+
         self.df = pl.DataFrame(
             {
                 "id": [],
@@ -14,38 +17,32 @@ class OpenAIResponseParser:
             }
         )
 
+        self._store_response()
+
                 # "role": [],
 
-    def store_response(self, response):
-        content = response['choices'][0]['message']['content'].strip()
+    def _store_response(self):
+        content = self.response['choices'][0]['message']['content'].strip()
 
         self.df = self.df.vstack(
             pl.DataFrame(
                 {
-                    "id": [response['id']],
-                    "created": [response['created']],
-                    "model": [response['model']],
-                    "usage": [response['usage']['prompt_tokens']],
+                    "id": [self.response['id']],
+                    "created": [self.response['created']],
+                    "model": [self.response['model']],
+                    "usage": [self.response['usage']['prompt_tokens']],
                     "content": [content],
                 }
             )
         )
 
+        print(self.df)
+
                     # "role": [response['choices'][0]['message']['role']],
 
-    def request_prompt(self, prompt, model='text-davinci-002', max_tokens=150):
-        response = openai.Completion.create(
-            engine=model,
-            prompt=prompt,
-            max_tokens=max_tokens,
-            n=1,
-            stop=None,
-            temperature=0.5,
-        )
-        self.store_response(response)
 
     def get_dataframe(self):
-        return self.df
+        return self.df.to_pandas()
 
 # # Example usage:
 # api_key = "your_openai_api_key"
