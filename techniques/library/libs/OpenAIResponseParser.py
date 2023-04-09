@@ -32,12 +32,12 @@ class OpenAIResponseParser:
 
         pattern = re.compile(r"```python([\s\S]*?)```")
         code_blocks = re.findall(pattern, content)
-        print ("code_blocks:", code_blocks)
+        # print ("code_blocks:", code_blocks)
 
         all_code = ""
         for code_block in code_blocks:
             all_code  += code_block.strip() + "\n"
-            
+
         self.df = pd.concat(
             [
                 self.df,
@@ -56,7 +56,7 @@ class OpenAIResponseParser:
             ignore_index=True,
         )
 
-        print(self.df)
+        # print(self.df)
 
     def get_dataframe(self):
         return self.df
