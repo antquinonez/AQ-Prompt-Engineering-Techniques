@@ -1,8 +1,12 @@
-# OpenAI Response Parser
-# The OpenAIResponseParser is a utility class designed to parse and store the responses from the OpenAI API, specifically for code generation tasks. The main goal is to provide a user-friendly way to access and analyze the content of the API responses, including code blocks and other relevant information.
+# Response Parser
+# The ResponseParser is a utility class designed to parse and store the responses from the
+# OpenAI API, specifically for code generation tasks. The main goal is to provide a
+# user-friendly way to access and analyze the content of the API responses, including code
+# blocks and other relevant information.
 
 # Features
-# - Parse and store API response data in a pandas DataFrame for easy manipulation and analysis.
+# - Parse and store API response data in a pandas DataFrame for easy manipulation and
+#   analysis.
 # - Extract code blocks from the response content and store them separately.
 # - Apply styling to the DataFrame for better readability.
 
@@ -11,7 +15,7 @@ import re
 from typing import List, Dict, Any
 
 
-class OpenAIResponseParser:
+class ResponseParser:
     def __init__(self, response: Dict[str, Any]) -> None:
         """
         Initialize OpenAIResponseParser with API response.
@@ -35,12 +39,14 @@ class OpenAIResponseParser:
         self._store_response()
         self._style()
 
+
     def _style(self) -> None:
         """
         Apply styling to the DataFrame.
         """
         self.df_needed = self.df[['id', 'created', 'model', 'usage', 'all_code']]
         self.styled = self.df_needed.style.set_properties(**{'text-align': 'left'})
+
 
     def _store_response(self) -> None:
         """
