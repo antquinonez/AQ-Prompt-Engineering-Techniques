@@ -45,7 +45,7 @@ class ResponseParser:
         Apply styling to the DataFrame.
         """
         self.df_needed = self.df[['id', 'created', 'model', 'usage', 'all_code']]
-        self.styled = self.df_needed.style.set_properties(**{'text-align': 'left'})
+        self.styled_log = self.df_needed.style.set_properties(**{'text-align': 'left'})
 
 
     def _store_response(self) -> None:
