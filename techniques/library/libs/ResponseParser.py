@@ -99,7 +99,7 @@ class ResponseParser:
         # self.df['code_blocks'] = self.df['code_blocks'].apply(format_list)
 
 
-    def get_log_df(self) -> pd.DataFrame:
+    def get_df(self) -> pd.DataFrame:
         """
         Get the DataFrame containing the API response.
 
