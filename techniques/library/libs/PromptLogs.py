@@ -9,7 +9,7 @@ class PromptLogs:
     
     def extract_dataframe(self) -> None:
         if self.response_parser is not None:
-            self.df = self.response_parser.get_dataframe()
+            self.df = self.response_parser.get_df()
     
     def append(self, response_parser: ResponseParser) -> None:
         additional_df = response_parser.get_df()
@@ -20,8 +20,7 @@ class PromptLogs:
     
     @property
     def styled_log(self) -> pd.DataFrame:
-        self.df_needed = self.df[['id', 'created', 'model', 'usage', 'all_code']]
-        self.styled_log = self.df_needed.style.set_properties(**{'text-align': 'left'})
+        df_needed = self.df[['id', 'created', 'model', 'usage', 'all_code']]
+        styled_log_df = df_needed.style.set_properties(**{'text-align': 'left'})
 
-        return self.styled_log
-
+        return styled_log_df
