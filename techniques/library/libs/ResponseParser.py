@@ -61,10 +61,7 @@ class ResponseParser:
         for code_block in code_blocks:
             all_code  += code_block.strip() + "\n"
 
-        self.df = pd.concat(
-            [
-                self.df,
-                pd.DataFrame(
+        df = pd.DataFrame(
                     {
                         "id": [self.response['id']],
                         "created": [self.response['created']],
@@ -74,11 +71,11 @@ class ResponseParser:
                         "code_blocks": [code_blocks],
                         "content": [content],
                     }
-                )
-            ],
-            ignore_index=True,
         )
 
+        # concatenate the new DataFrame with the existing DataFrame
+        self.df = pd.concat( [self.df, df], ignore_index=False,)
+        
         # format an all_code string
         def format_text(text):
             return text.replace('\n', '<br>').replace(' ', '&nbsp;')
@@ -105,4 +102,5 @@ class ResponseParser:
 
         :return: DataFrame containing the API response.
         """
+        # self.df = self.df.set_index('id')
         return self.df
