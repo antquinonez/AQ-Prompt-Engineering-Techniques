@@ -41,7 +41,7 @@ class MessageParser:
         self.input_string = input_string
         self.message_pattern = re.compile(r'^(?P<role>\w+):\s*(?P<content>.*?)\s*$', re.MULTILINE)
 
-    def parse_messages(self) -> List[Dict[str, str]]:
+    def parse(self) -> List[Dict[str, str]]:
         """
         Parse the messages from the input_string based on the message_pattern.
 
