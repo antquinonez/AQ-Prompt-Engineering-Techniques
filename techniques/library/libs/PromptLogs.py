@@ -16,8 +16,6 @@ class PromptLogs:
 
 
     def append(self, messages:list, response_parser: ResponseParser) -> None:
-        print(messages)
-        
         # Add brackets and remove the first and last characters
         messages_str = str(messages)
         messages_str_with_brackets = "[" + messages_str[1:-1] + "]"  
@@ -28,13 +26,10 @@ class PromptLogs:
         additional_df['sid'] = [self.id_generator.get_id() for _ in range(len(additional_df))]
         additional_df['prompts'] = messages_str_with_brackets
         
-        print("df:", self.df)
-        
         # # Check if 'sid' values in both dataframes are not equal before concatenating
         # if len(self.df) > 1:
         #     if not self.df['sid'].equals(additional_df['sid']):
         #         self.df = pd.concat([self.df, additional_df])
-
 
         self.df = pd.concat([self.df, additional_df])
 
