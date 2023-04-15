@@ -1,6 +1,7 @@
 from OrderedSet import OrderedSet
 from typing import Any
-
+import re
+   
 class Mixer:
     """
     Uses OrderedSet to store unique items in the order they were added.
@@ -16,15 +17,13 @@ class Mixer:
         :param item: The item to be added to the set.
         """
         for item in items:
-            self.ordered_set.add(item)
+            item_x = re.split(r'[ \n,\t]+', item.strip())
+            for i in item_x:
+                if i not in self.ordered_set:
+                    self.ordered_set.add(i)
+                else:
+                    pass
 
     def __repr__(self) -> str:
         return f"CustomClass({self.ordered_set})"
 
-
-# Usage example
-mx = Mixer()
-mx.add(1)
-mx.add(2)
-mx.add(2,2,3,4)  # This will not be added again.
-print(mx)  # Output: CustomClass(OrderedSet([1, 2]))
