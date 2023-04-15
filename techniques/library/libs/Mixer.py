@@ -10,7 +10,6 @@ class Mixer:
 
     def __init__(self) -> None:
         self.ordered_set = OrderedSet()
-        self._iterator = iter(self.ordered_set)
 
     def add(self, *items: Any) -> None:
         """
@@ -24,7 +23,6 @@ class Mixer:
             for i in item_x:
                 if i not in self.ordered_set:
                     self.ordered_set.add(i)
-                    self._iterator = iter(self.ordered_set)
                 else:
                     pass
 
@@ -39,7 +37,6 @@ class Mixer:
             for i in item_x:
                 if i in self.ordered_set:
                     self.ordered_set.remove(i)
-                    self._iterator = iter(self.ordered_set)
                 else:
                     pass
 
@@ -51,16 +48,6 @@ class Mixer:
         """
         return self.ordered_set
 
-    def next_item(self) -> Optional[Any]:
-        """
-        Return the next item from the ordered set.
-
-        :return: The next item in the ordered set or None if there are no more items.
-        """
-        try:
-            return next(self._iterator)
-        except StopIteration:
-            return None
 
     def __repr__(self) -> str:
         return f"CustomClass({self.ordered_set})"
