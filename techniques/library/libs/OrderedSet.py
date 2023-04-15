@@ -25,7 +25,7 @@ class OrderedSet(OrderedDict):
         if item not in self:
             self[item] = None
 
-    def discard(self, item: Any) -> None:
+    def remove(self, item: Any) -> None:
         """
         Remove an item from the ordered set if it is present.
         
